@@ -1,50 +1,43 @@
-/*class Registration{
-    constructor(pName, kName, age, email, password, medInfo) {
-        this.pName = pName;
-        this.kName = kName;
+class User {
+    constructor(name, age, email, password) {
+        this.name = name;
         this.age = age;
         this.email = email;
         this.password = password;
-        this.medInfo = medInfo;
     }
 }
 
-let registration = [];
-
+let users = [];
 
 const addUser = function () {
 
-    let inputPname = document.querySelector("#input_RegistrationPname").value;
-    let inputKname = document.querySelector("#input_Kname").value;
-    let inputAge = document.querySelector("#input_age").value;
+    let inputName = document.querySelector("#input_name").value
     let inputEmail = document.querySelector("#input_email").value;
+    let inputAge = document.querySelector("#input_age").value;
     let inputPassword = document.querySelector("#input_password").value;
-    let inputMedinfo = document.querySelector("#input_MedInfo").value
 
-    if (inputEmail.search('@') != -1) 
+    if (inputEmail.search('@') != -1)
     {
-        let datos = {
-            pName: inputPname,
-            kName: inputKname,
-            age: inputAge,
+        let data = {
+            name: inputName,
             email: inputEmail,
-            pass: inputPassword,
-            medInfo: inputMedinfo,
+            age: inputAge,
+            pass: inputPassword
         };
 
 
-        if (localStorage.registration != null) {
-            registration = JSON.parse(localStorage.registration);
+        if (localStorage.users != null) {
+            users = JSON.parse(localStorage.users);
         }
 
-        registration.push(datos);
+        users.push(data);
 
-        localStorage.setItem("registration", JSON.stringify(registration));
+        localStorage.setItem("users", JSON.stringify(users));
 
-        location.replace("../register.html");
+        location.replace("../index.html");
     }
     else {
-        alert("You need to insert a valid email");
+        alert("Invalid Email. Insert a valid Email");
     }
 };
 
@@ -54,60 +47,4 @@ if (document.getElementById("form") != null) {
         e.preventDefault();
         addUser();
     });
-}*/
-
-/*
-class Usuario {
-    constructor(nombre, username, email, password) {
-        this.nombre = nombre;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
 }
-
-
-let usuarios = [];
-
-
-const agregarUsuario = function () {
-
-
-    let inputEmail = document.querySelector("#input_email").value;
-    let inputUsername = document.querySelector("#input_username").value;
-    let inputPassword = document.querySelector("#input_password").value;
-
-    if (inputEmail.search('@') != -1) // 
-    {
-        let datos = {
-            email: inputEmail,
-            username: inputUsername,
-            pass: inputPassword
-        };
-
-
-        if (localStorage.usuarios != null) {
-            usuarios = JSON.parse(localStorage.usuarios);
-        }
-
-        usuarios.push(datos);
-
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-        location.replace("../index.html");
-    }
-    else {
-        alert("Debe ingresar un email válido");
-    }
-};
-
-
-if (document.getElementById("formulario") != null) {
-    document.querySelector("#formulario").addEventListener("submit", function (e) {
-        e.preventDefault();
-        agregarUsuario();
-    });
-}
-*/
-
-

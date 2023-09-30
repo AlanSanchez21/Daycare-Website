@@ -1,6 +1,6 @@
 class Contact{
-    constructor(pName, email) {
-        this.pName = pName;
+    constructor(comment, email) {
+        this.comment = comment;
         this.email = email;
     }
 }
@@ -16,7 +16,7 @@ const addUser = function () {
     if (inputEmail.search('@') != -1) 
     {
         let datos = {
-            pName: inputPname,
+            comment: inputPname,
             email: inputEmail
         };
 
@@ -29,7 +29,7 @@ const addUser = function () {
 
         localStorage.setItem("contact", JSON.stringify(contact));
 
-        location.replace("../register.html");
+        location.replace("../index.html");
     }
     else {
         alert("You need to insert a valid email");
